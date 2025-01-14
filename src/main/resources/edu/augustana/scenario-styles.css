@@ -1,0 +1,44 @@
+/* scenario-styles.css */
+
+.main-container {
+    -fx-padding: 20;
+    -fx-background-color: #F5F5F5;
+}
+
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 10;
+}
+
+.input-grid {
+    -fx-padding: 10;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D3D3D3;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.bot-management {
+    -fx-padding: 10;
+}
+
+.bot-details {
+    -fx-padding: 10;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D3D3D3;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.section-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.button-bar {
+    -fx-alignment: center;
+}

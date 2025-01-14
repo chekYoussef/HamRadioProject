@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@scenario-styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.augustana.ui.ScenarioAiBuilderController">
+
+    <!-- Main Layout -->
+    <VBox prefHeight="800.0" prefWidth="800.0" spacing="20" styleClass="main-container">
+        <!-- Header -->
+        <Label prefHeight="49.0" prefWidth="780.0" style="-fx-background-color: grey;" styleClass="header-label" text="Scenario Builder" textFill="#fcf8f8" />
+
+        <!-- Scenario Input Section -->
+        <GridPane hgap="10" styleClass="input-grid" vgap="10">
+            <Label text="Scenario Name:" />
+            <TextField fx:id="scenarioNameField" GridPane.columnIndex="1" />
+
+            <Label text="Description:" GridPane.rowIndex="1" />
+            <TextArea fx:id="scenarioDescriptionArea" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Notes:" GridPane.rowIndex="2" />
+            <TextArea fx:id="scenarioNotesArea" prefHeight="80" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Bot Management Section -->
+        <HBox prefHeight="423.0" prefWidth="760.0" spacing="20" styleClass="bot-management">
+            <Label prefHeight="23.0" prefWidth="48.0" styleClass="section-label" text="Bots:" />
+            <VBox prefHeight="390.0" prefWidth="182.0" spacing="10">
+                <ListView fx:id="botListView" prefHeight="354.0" prefWidth="349.0" />
+                <HBox spacing="10">
+                    <Button fx:id="addBotButton" text="Add Bot" />
+                    <Button fx:id="kickBotButton" text="Kick Bot" />
+                </HBox>
+            </VBox>
+            <!-- Bot Details Menu -->
+            <VBox fx:id="botDetailsMenu" managed="true" prefHeight="405.0" prefWidth="467.0" spacing="10" styleClass="bot-details" visible="true">
+                <Label styleClass="section-label" text="Bot Details" />
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Name:" GridPane.rowIndex="1" />
+                    <TextField fx:id="botNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Objective:" GridPane.rowIndex="2" />
+                    <TextField fx:id="botObjectiveField" prefHeight="129.0" prefWidth="348.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Is Starting Bot:" GridPane.rowIndex="3" />
+                    <CheckBox fx:id="isStartingBotCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+            <Button fx:id="saveButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Save">
+               <VBox.margin>
+                  <Insets left="200.0" />
+               </VBox.margin>
+            </Button>
+            </VBox>
+        </HBox>
+
+
+
+        <!-- Buttons Section -->
+        <HBox spacing="20" styleClass="button-bar">
+            <Button fx:id="saveJsonButton" text="Save to JSON" />
+         <Button fx:id="openJsonButton" mnemonicParsing="false" text="Open JSON" />
+            <Button fx:id="playButton" onAction="#pressPlayButton" text="Play" />
+            <Button fx:id="backButton" onAction="#pressBackButton" text="Back" />
+        </HBox>
+    </VBox>
+</AnchorPane>
